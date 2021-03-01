@@ -1,0 +1,297 @@
+# Copyright (C) 2016 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: creek 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2016-02-14 21:43:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: weartstudio <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:9
+#@ creek
+msgid "Sorry, nothing to display."
+msgstr ""
+
+#: 404.php:10
+#@ creek
+msgid "Try to search something."
+msgstr ""
+
+#: comments.php:8
+#, php-format
+#@ creek
+msgctxt "comments title"
+msgid "One comment &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:33
+#@ creek
+msgid "Name"
+msgstr ""
+
+#: comments.php:34
+#@ creek
+msgid "Email"
+msgstr ""
+
+#: footer.php:20
+#@ creek
+msgid "&copy; 2017 weartstudio"
+msgstr ""
+
+#: single.php:39
+#@ creek
+msgid "Pages"
+msgstr ""
+
+#: search.php:34
+#@ creek
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: searchform.php:4
+#@ creek
+msgid "Search..."
+msgstr ""
+
+#: functions.php:25
+#@ creek
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:26
+#@ creek
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:42
+#@ creek
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:186
+#@ creek
+msgid "Comment awaiting approval"
+msgstr ""
+
+#: inc/article-grid.php:13
+#: inc/article-list.php:16
+#: inc/article-standard.php:22
+#@ creek
+msgid "By"
+msgstr ""
+
+#: inc/article-grid.php:14
+#: inc/article-list.php:17
+#: inc/article-standard.php:23
+#@ creek
+msgid "In"
+msgstr ""
+
+#: inc/widget/latest_posts.php:16
+#@ creek
+msgid "A widget that displays the latest posts."
+msgstr ""
+
+#: inc/widget/latest_posts.php:18
+#@ creek
+msgid "Creek: Latest Posts Widget"
+msgstr ""
+
+#: inc/customir/adsense.php:7
+#@ creek
+msgid "Header Leaderboard"
+msgstr ""
+
+#: inc/customir/adsense.php:8
+#@ creek
+msgid "Big leaderboard advertise bottom of the slider in home, and bottom of the menu in every page."
+msgstr ""
+
+#: inc/customir/adsense.php:17
+#@ creek
+msgid "Display Header Leaderboard"
+msgstr ""
+
+#: inc/customir/article_layout.php:8
+#@ creek
+msgid "Display the slider?"
+msgstr ""
+
+#: inc/customir/article_layout.php:21
+#@ creek
+msgid "Highlighted two posts layout"
+msgstr ""
+
+#: inc/customir/article_layout.php:26
+#: inc/customir/article_layout.php:49
+#: inc/customir/article_layout.php:71
+#: inc/customir/article_layout.php:138
+#@ creek
+msgid "List"
+msgstr ""
+
+#: inc/customir/article_layout.php:27
+#: inc/customir/article_layout.php:50
+#: inc/customir/article_layout.php:72
+#: inc/customir/article_layout.php:139
+#@ creek
+msgid "Grid"
+msgstr ""
+
+#: inc/customir/article_layout.php:28
+#: inc/customir/article_layout.php:51
+#: inc/customir/article_layout.php:73
+#: inc/customir/article_layout.php:140
+#@ creek
+msgid "Standard"
+msgstr ""
+
+#: inc/customir/article_layout.php:44
+#@ creek
+msgid "Homepage layout"
+msgstr ""
+
+#: inc/customir/article_layout.php:66
+#@ creek
+msgid "Archive pages layout"
+msgstr ""
+
+#: inc/customir/article_layout.php:89
+#@ creek
+msgid "Sidebar side on Home and Archives"
+msgstr ""
+
+#: inc/customir/article_layout.php:94
+#: inc/customir/article_layout.php:116
+#@ creek
+msgid "Left"
+msgstr ""
+
+#: inc/customir/article_layout.php:95
+#: inc/customir/article_layout.php:117
+#@ creek
+msgid "Right"
+msgstr ""
+
+#: inc/customir/article_layout.php:96
+#: inc/customir/article_layout.php:118
+#@ creek
+msgid "No sidebar"
+msgstr ""
+
+#: inc/customir/article_layout.php:111
+#@ creek
+msgid "Sidebar side on Articles and Pages"
+msgstr ""
+
+#: inc/customir/article_layout.php:133
+#@ creek
+msgid "Related posts layout"
+msgstr ""
+
+#: inc/customir/article_layout.php:150
+#@ creek
+msgid "Do you want to display the related posts?"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:10
+#@ creek
+msgid "Menu position"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:15
+#@ creek
+msgid "Bottom of the logo"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:16
+#@ creek
+msgid "Top of the logo"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:17
+#@ creek
+msgid "Top of the logo and fixed"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:30
+#@ creek
+msgid "Menu width"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:35
+#: inc/customir/header_footer_layout.php:54
+#@ creek
+msgid "Container width"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:36
+#: inc/customir/header_footer_layout.php:55
+#@ creek
+msgid "Full width"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:49
+#@ creek
+msgid "Footer width"
+msgstr ""
+
+#: inc/customir/header_footer_layout.php:65
+#@ creek
+msgid "Copyright text"
+msgstr ""
+
+#: inc/customir/sections.php:10
+#@ creek
+msgid "Ads Settings"
+msgstr ""
+
+#: inc/customir/sections.php:11
+#@ creek
+msgid "Setting up an advertise blocks."
+msgstr ""
+
+#: inc/customir/sections.php:16
+#@ creek
+msgid "Header & Footer Settings"
+msgstr ""
+
+#: inc/customir/sections.php:21
+#@ creek
+msgid "Layout Settings"
+msgstr ""
+
+
+
+
+#. Theme Name of the plugin/theme
+msgid "creek"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#@ creek
+msgid "https://themeforest.net/"
+msgstr ""
+
+#. Description of the plugin/theme
+#@ creek
+msgid "Do you like the minimal, but elegant themes? Thank Creek is for you."
+msgstr ""
+
+#. Author of the plugin/theme
+#@ creek
+msgid "WeartStudio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#@ creek
+msgid "http://weart.hu/"
+msgstr ""

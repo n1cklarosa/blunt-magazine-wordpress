@@ -1,0 +1,8 @@
+[12-Nov-2020 06:20:58 Australia/Sydney] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home2/bluntmag/public_html/wp-content/themes/creek/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home2/bluntmag/public_html/wp-content/themes/creek/index.php on line 1
+[26-Nov-2020 00:10:26 Australia/Sydney] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home2/bluntmag/public_html/wp-content/themes/creek/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home2/bluntmag/public_html/wp-content/themes/creek/index.php on line 1
