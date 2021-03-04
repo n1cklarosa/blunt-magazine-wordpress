@@ -406,8 +406,12 @@ body {
 	.more-heading {
 		position: relative;
 		h4 {
-			padding-left: 55px;
-			padding-right: 55px;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include media-breakpoint-up(md) {
+				padding-left: 55px;
+				padding-right: 55px;
+			}
 			display: table;
 			text-align: center;
 			margin: 0 auto;
@@ -697,6 +701,122 @@ body {
 	}
 }
 
+.new-music {
+	.tease {
+		@extend .d-none;
+		@extend .d-lg-block;
+	}
+	.primary-col {
+		.image-div {
+			margin: 0px;
+			@include media-breakpoint-up(lg) {
+				margin: 0 5px 20px 20px;
+			}
+			position: relative;
+			display: flex;
+			align-items: end;
+			.entry-meta {
+				position: absolute;
+				left: -12px;
+				right: 45px;
+				bottom: 0;
+				margin-bottom: 10px;
+				@include media-breakpoint-up(lg) {
+					margin-bottom: 30px;
+					right: 30px;
+				}
+				.subtitle {
+					color: $blunt-green;
+					font-family: $Teko;
+					font-style: normal;
+					font-weight: bold;
+					@include media-breakpoint-up(lg) {
+						font-size: 18px;
+						line-height: 120%;
+					}
+				}
+				h2 {
+					font-style: normal;
+					font-weight: bold;
+					font-size: 28px;
+					line-height: 32px;
+					font-family: $Plex;
+
+					@include media-breakpoint-up(lg) {
+						font-style: normal;
+						font-weight: bold;
+						font-size: 52px;
+						line-height: 60px;
+					}
+					color: $white;
+					a {
+						color: $white;
+					}
+				}
+			}
+			img {
+				background: linear-gradient(
+						60.26deg,
+						#000000 3.86%,
+						rgba(0, 0, 0, 0) 59.63%
+					),
+					url(Fever333.jpg);
+				box-shadow: 4px 4px 40px 5px #37b6ab;
+			}
+		}
+	}
+}
+
+.join-blunt-mag-front {
+	padding-top: 107px;
+	padding-bottom: 107px;
+	background-color: $dark-grey;
+	color: $white;
+	h3 {
+		font-family: $Teko;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 42px;
+		line-height: 50px;
+	}
+	p {
+		font-family: $Inter;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 140%;
+		&.join-subtext {
+			font-family: $Inter;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 10px;
+			line-height: 20px;
+		}
+	}
+	input[type="text"] {
+		background-color: transparent;
+		border-bottom: 4px solid $light-gray;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		margin-right: 20px;
+		padding-left: 0;
+		color: $light-gray;
+	}
+	.input-group-append {
+		button {
+			border: 4px solid $white;
+			background-color: transparent;
+			color: white;
+			font-family: $Teko;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 1em;
+		}
+	}
+}
+
 // TEASE
 
 .tease {
@@ -793,6 +913,7 @@ body {
 			box-shadow: 10px 10px 30px 2px #37b6ab;
 		}
 		.entry-title {
+			font-weight: 500;
 			font-family: $Plex;
 			font-style: normal;
 			font-weight: 500;
@@ -820,8 +941,12 @@ body {
 				font-family: $Plex;
 				font-style: normal;
 				font-weight: 500;
-				font-size: 20px;
-				line-height: 26px;
+				font-size: 28px;
+				line-height: 36px;
+				@include media-breakpoint-up(lg) {
+					font-size: 20px;
+					line-height: 26px;
+				}
 				color: $black;
 				a {
 					color: $black;
