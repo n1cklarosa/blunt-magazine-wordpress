@@ -11745,12 +11745,12 @@ jQuery(document).ready(function ($) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
     }
-  });
-  $(".slider-step").on("click", function (e) {
-    e.preventDefault();
-    console.log($(this).data("index"));
-    homePageSlider.slideTo($(this).data("index"));
-  });
+  }); // $(".slider-step").on("click", function (e) {
+  // 	e.preventDefault();
+  // 	console.log($(this).data("index"));
+  // 	homePageSlider.slideTo($(this).data("index"));
+  // });
+
   homePageSlider.on("activeIndexChange", function () {
     console.log("slide changed");
     console.log("swiper.activeIndex", homePageSlider.activeIndex);
