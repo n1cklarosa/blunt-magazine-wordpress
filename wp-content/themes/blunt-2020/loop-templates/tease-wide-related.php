@@ -13,17 +13,15 @@ if (isset($args['size'])):
 endif;
 ?>
 
-<article <?php post_class('col-12 '.$size.' tease tease-wide'); ?>
+<article <?php post_class('col-12 '.$size.' tease  tease-related'); ?>
     id="post-<?php the_ID(); ?>">
     <div class="tile-wrapper">
         <div class="d-flex w-100 align-items-start">
-            <div class="tile-image mr-3">
+            <div class="tile-image mr-2">
                 <?php echo get_the_post_thumbnail($post->ID, 'baby-tile', ['class' => 'img-fluid']); ?>
             </div>
             <div class="article-content d-block">
                 <header class="entry-header">
-                    <?php show_cats(); ?>
-
                     <?php
                     the_title(
     sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())),
@@ -38,8 +36,6 @@ endif;
         </div>
 
 
-        <footer class="entry-footer mt-3">
-            <?php show_author(); ?>
-        </footer><!-- .entry-footer -->
+
     </div>
 </article><!-- #post-## -->
