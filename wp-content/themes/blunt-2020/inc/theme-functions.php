@@ -77,9 +77,9 @@ function convert_to_ids(&$item, $key)
 // return posts with the same tags
 function return_more_from_category($post_id)
 {
-    return get_primary_taxonomy_term($post_id);
-    if ($tags
-        && !is_wp_error($tags)
+    $category = get_primary_taxonomy_term($post_id);
+    if ($category
+        && !is_wp_error($category)
     ) {
         array_walk($tags, 'convert_to_ids');
          
@@ -87,7 +87,7 @@ function return_more_from_category($post_id)
             'post__not_in'        => array( $post_id ),
             'post__not_in' => [$post_id],
             'post_type'    => 'post',
-            'tag__in'      => $tags,
+            'category__in'      => $category,
             'posts_per_page'      => 4,
         ];
         $my_query = get_posts($args);

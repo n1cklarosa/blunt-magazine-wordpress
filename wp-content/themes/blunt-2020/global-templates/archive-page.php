@@ -1,11 +1,21 @@
-<div class="archive-header">
+<?php
+
+$title = get_the_archive_title();
+
+if (strlen($title) > 12):
+    $class = 'large-heading';
+else:
+    $class = '';
+endif;
+?>
+
+<div class="archive-header <?php echo $class; ?>">
     <div class="container">
         <div class="row archive-header-container align-items-end">
             <div class="floating-header">
                 <header class="page-header">
-                    <?php
-                        the_archive_title('<h1 class="page-title">', '</h1>');
-                 ?>
+                    <h1 class="page-title"><?php echo $title; ?>
+                    </h1>
                 </header>
             </div>
 

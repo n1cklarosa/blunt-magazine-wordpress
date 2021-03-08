@@ -7,6 +7,8 @@
 
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
+
+$primary_category = get_primary_taxonomy_term();
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -23,7 +25,9 @@ defined('ABSPATH') || exit;
 					<div class="container">
 						<div class="row  ">
 							<div class="col-12 col-md-7">
-								<h5 class="mt-1 mb-2  pl-2 pr-5 pl-md-0 pr-md-0">GAMING</h5>
+								<h5 class="mt-1 mb-2  pl-2 pr-5 pl-md-0 pr-md-0 text-uppercase">
+									<?php if ($primary_category): echo $primary_category['title']; endif;?>
+								</h5>
 								<?php the_title('<h1 class="entry-title pl-2 pr-5 pl-md-0 pr-md-0">', '</h1>'); ?>
 							</div>
 						</div>
@@ -87,13 +91,15 @@ defined('ABSPATH') || exit;
 			<div class="row ">
 				<div class="col-12 mb-3" role="complementary">
 					<div class="more-heading">
-						<h4 class='mb-4'>MORE IN GAMING</h4>
+						<h4 class='mb-4 text-uppercase'>
+							MORE IN <?php if ($primary_category): echo $primary_category['title']; endif;?>
+						</h4>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<?php
-                    foreach ($related as $key => $post) {
+                    foreach ($more as $key => $post) {
                         setup_postdata($post);
                         get_template_part('loop-templates/tease-tall-post', );
                     }
