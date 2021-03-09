@@ -9,6 +9,11 @@
 defined('ABSPATH') || exit;
 
 $primary_category = get_primary_taxonomy_term();
+$title = get_the_title();
+$class = 'col-md-7';
+if (strlen($title) > 50):
+    $class='col-md-10';
+endif;
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -24,7 +29,8 @@ $primary_category = get_primary_taxonomy_term();
 				<div class="header-details">
 					<div class="container">
 						<div class="row  ">
-							<div class="col-12 col-md-7">
+							<div
+								class="col-12 <?php echo $class; ?>">
 								<h5 class="mt-1 mb-2  pl-2 pr-5 pl-md-0 pr-md-0 text-uppercase">
 									<?php if ($primary_category): echo $primary_category['title']; endif;?>
 								</h5>

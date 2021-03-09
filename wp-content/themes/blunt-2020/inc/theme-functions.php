@@ -4,8 +4,17 @@
 function pull_front_featured()
 {
     $posts = get_posts(array( 'category_name' => 'features', 'posts_per_page' => 3 ));
-    return $posts;
+    $articles = get_field('featured_articles', 'option');
+
+    return $articles;
 }
+
+
+function filter_posts_for_id(&$item, $key)
+{
+    $item = $item->ID ;
+}
+ 
 
 function latest_without_featured($featured)
 {
@@ -139,4 +148,65 @@ function get_primary_taxonomy_term($post = 0, $taxonomy = 'category')
         $primary_term['title'] = $term_display;
     }
     return $primary_term;
+}
+
+
+// convert yourtube link to embed code
+function getYoutubeEmbedUrl($url)
+{
+    $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_]+)\??/i';
+    $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))(\w+)/i';
+
+    if (preg_match($longUrlRegex, $url, $matches)) {
+        $youtube_id = $matches[count($matches) - 1];
+    }
+
+    if (preg_match($shortUrlRegex, $url, $matches)) {
+        $youtube_id = $matches[count($matches) - 1];
+    }
+    return 'https://www.youtube.com/embed/' . $youtube_id ;
+}
+
+
+function createEmbedCode($url)
+{
+    return '<div class="videoWrapper"><iframe width="100%"  src="'.$url.'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+}
+
+
+
+function fwp_archive_per_page($query)
+{
+    global $tag_filter;
+    if (is_tag()) {
+        if (isset($_GET['filter'])):
+            $category_filter = sanitize_text_field($_GET['filter']);
+        $category = get_category_by_slug($category_filter);
+
+        if ($category) {
+            $tag_filter = $category;
+            $query->set('category__in', [$category->term_id]);
+        }
+        endif;
+    }
+}
+add_filter('pre_get_posts', 'fwp_archive_per_page');
+
+
+// lets add our custom admin page for our theme settings
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' 	=> 'Theme General Settings',
+        'menu_title'	=> 'Theme Settings',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Ad Settings',
+        'menu_title'	=> 'Ads',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
 }

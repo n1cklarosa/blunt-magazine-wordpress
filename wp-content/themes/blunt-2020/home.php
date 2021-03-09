@@ -8,7 +8,9 @@
 defined('ABSPATH') || exit;
 
 get_header();
-$featured = pull_front_featured();
+$featured = get_field('homepage_features', 'option');
+$videos = get_field('homepage_videos', 'option');
+
 $latest = latest_without_featured($featured);
 // var_dump($featured);
 ?>
@@ -135,7 +137,7 @@ $latest = latest_without_featured($featured);
                 <div class="col-12 col-md-10 primary-box">
                     <div class="px-3 px-md-0 mb-5 mb-md-0">
                         <?php
-                        $post = $featured[0];
+                        $post = $videos[0];
                         setup_postdata($post); ?>
                         <a
                             href="<?php echo esc_url(get_permalink()); ?>">
@@ -164,12 +166,14 @@ $latest = latest_without_featured($featured);
                         </h5>
                         <?php
                             $cnt = 0;
-                            foreach ($featured as $key => $post) {
-                                if ($cnt == 0) {
+                            foreach ($videos as $key => $post) {
+                                if ($key == 0) {
                                     $cnt++;
                                     continue;
                                 }
-                                setup_postdata($post); ?>
+                                if ($key < 3):
+                                setup_postdata($post);
+                                endif; ?>
 
                         <a
                             href="<?php echo esc_url(get_permalink()); ?>">
@@ -189,7 +193,7 @@ $latest = latest_without_featured($featured);
                             wp_reset_postdata(); ?>
                     </div>
                     <div class=" ml-3 mr-3 ml-md-0 mr-md-0">
-                        <a href="/videos" class="btn btn-block btn-outline-secondary">MORE VIDEOS</a>
+                        <a href="/category/video" class="btn btn-block btn-outline-secondary">MORE VIDEOS</a>
                     </div>
                 </div>
             </div>
