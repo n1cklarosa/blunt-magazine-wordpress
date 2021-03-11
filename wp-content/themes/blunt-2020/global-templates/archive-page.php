@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined('ABSPATH') || exit;
+
+
 $title = get_the_archive_title();
 
 if (strlen($title) > 12):

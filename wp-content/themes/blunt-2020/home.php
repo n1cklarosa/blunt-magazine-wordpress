@@ -82,8 +82,8 @@ $latest = latest_without_featured($featured);
         <div class="spacer eighty"></div>
 
         <div class="container latest-posts mb-lg-5">
-            <div class="px-lg-3 px-3">
-                <div class="row pb-4">
+            <div class="px-lg-0 px-3">
+                <div class="row justify-content-center pb-4">
                     <?php
                     $cnt = 0;
                     foreach ($latest as $key => $post) {
@@ -134,7 +134,7 @@ $latest = latest_without_featured($featured);
                 </div>
             </div>
             <div class="row pb-5 front-videos">
-                <div class="col-12 col-md-10 primary-box">
+                <div class="col-12 col-lg-10 primary-box">
                     <div class="px-3 px-md-0 mb-5 mb-md-0">
                         <?php
                         $post = $videos[0];
@@ -159,8 +159,8 @@ $latest = latest_without_featured($featured);
                     </div>
 
                 </div>
-                <div class="col-12 col-md-2">
-                    <div class="w-100 px-3 smaller d-none d-md-block">
+                <div class="col-12 col-lg-2">
+                    <div class="w-100 px-3 smaller d-none d-lg-block">
                         <h5 class="subtitle ">
                             RECENT
                         </h5>
@@ -192,8 +192,8 @@ $latest = latest_without_featured($featured);
                             }
                             wp_reset_postdata(); ?>
                     </div>
-                    <div class=" ml-3 mr-3 ml-md-0 mr-md-0">
-                        <a href="/category/video" class="btn btn-block btn-outline-secondary">MORE VIDEOS</a>
+                    <div class="mt-4 mt-lg-0 ml-3 mr-3 ml-md-0 mr-md-0 text-center">
+                        <a href="/category/video" class="btn btn-lg-block btn-outline-secondary">MORE VIDEOS</a>
                     </div>
                 </div>
             </div>

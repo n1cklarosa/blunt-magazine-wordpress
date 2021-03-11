@@ -9,13 +9,15 @@
 defined('ABSPATH') || exit;
 ?>
 
-<article <?php post_class('col-12 col-lg-3 tease tease-tall'); ?>
+<article <?php post_class('col-12 col-md-6 col-lg-3 tease tease-tall'); ?>
 	id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
-		<a href="<?php echo esc_url(get_permalink()); ?>">
-			<?php echo get_the_post_thumbnail($post->ID, 'tile'); ?>
-		</a>
+		<div class="img-div text-center">
+			<a href="<?php echo esc_url(get_permalink()); ?>">
+				<?php echo get_the_post_thumbnail($post->ID, 'tile'); ?>
+			</a>
+		</div>
 		<?php show_cats(); ?>
 		<div class="title w-100">
 			<?php

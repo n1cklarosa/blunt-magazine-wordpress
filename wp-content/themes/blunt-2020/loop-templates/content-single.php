@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 $primary_category = get_primary_taxonomy_term();
 $title = get_the_title();
 $class = 'col-md-7';
-if (strlen($title) > 50):
+if (strlen($title) > 49):
     $class='col-md-10';
 endif;
 ?>

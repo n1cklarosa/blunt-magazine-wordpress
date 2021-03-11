@@ -174,11 +174,22 @@ function createEmbedCode($url)
 }
 
 
-
+// lets alter our archive and search results with a category if one is used
 function fwp_archive_per_page($query)
 {
     global $tag_filter;
-    if (is_tag()) {
+    if (is_tag() && $query->is_main_query()) {
+        if (isset($_GET['filter'])):
+            $category_filter = sanitize_text_field($_GET['filter']);
+        $category = get_category_by_slug($category_filter);
+
+        if ($category) {
+            $tag_filter = $category;
+            $query->set('category__in', [$category->term_id]);
+        }
+        endif;
+    }
+    if (is_search() && $query->is_main_query()) {
         if (isset($_GET['filter'])):
             $category_filter = sanitize_text_field($_GET['filter']);
         $category = get_category_by_slug($category_filter);

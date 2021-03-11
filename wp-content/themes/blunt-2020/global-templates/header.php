@@ -28,8 +28,7 @@
 			</div>
 			<!-- end custom logo -->
 
-			<button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-				aria-controls="navbarNavDropdown" aria-expanded="false"
+			<button type="button" class="toggle-menu d-lg-none pr-0"
 				aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
 				<img style='width:40px;height:auto;'
 					src="<?php echo get_template_directory_uri(); ?>/img/menu-icon.svg"
@@ -55,9 +54,11 @@
 				<a class="mr-3 enable-related" href="#related-items"><img style='width:18px;height:auto;'
 						src="<?php echo get_template_directory_uri(); ?>/img/reading.svg"
 						class="img-fluid" alt="My reading List"></a>
-				<a><img style='width:40px;height:auto;'
+				<a class=" toggle-menu"
+					aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>"><img
+						style='width:40px;height:auto;'
 						src="<?php echo get_template_directory_uri(); ?>/img/menu-icon.svg"
-						class="img-fluid toggle-menu" alt="Site Menu"></a>
+						class="img-fluid " alt="Site Menu"></a>
 			</nav>
 
 		</div><!-- .container -->

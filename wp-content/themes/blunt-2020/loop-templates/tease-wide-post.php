@@ -7,13 +7,13 @@
 
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
-$size = 'col-md-4';
+$size = 'col-lg-4';
 if (isset($args['size'])):
     $size = $args['size'];
 endif;
 ?>
 
-<article <?php post_class('col-12 '.$size.' tease tease-wide'); ?>
+<article <?php post_class('col-12 col-md-6 mb-4 mb-lg-0 '.$size.' tease tease-wide'); ?>
     id="post-<?php the_ID(); ?>">
     <div class="tile-wrapper">
         <div class="d-flex w-100 align-items-start">

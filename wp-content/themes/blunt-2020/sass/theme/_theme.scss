@@ -67,7 +67,6 @@ body {
 // popup menu
 
 #popupMenu {
-	overflow-y: hidden;
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
@@ -79,6 +78,9 @@ body {
 	z-index: 10;
 	background-color: $black;
 	position: fixed;
+	@media only screen and (max-device-height: 728px) {
+		overflow-y: scroll;
+	}
 }
 
 body {
@@ -148,12 +150,21 @@ body {
 	}
 	.header-container {
 		position: relative;
+		.toggle-menu {
+			background-color: transparent;
+			border: 0px solid transparent;
+		}
 	}
 	#main-nav {
 		li {
 			&.menu-item {
 				a {
-					font-family: Inter;
+					@include media-breakpoint-between(md, lg) {
+						font-size: 14px;
+						padding-right: 0.7rem;
+						padding-left: 0.8rem;
+					}
+					font-family: $Inter;
 					font-style: normal;
 					font-weight: 500;
 					font-size: 16px;
@@ -168,8 +179,21 @@ body {
 					&:before {
 						position: absolute;
 						top: 100%;
-						left: $spacer;
-						right: $spacer;
+						// left: $spacer;
+						// right: $spacer;
+
+						@include media-breakpoint-up(md) {
+							left: 0px;
+							right: 0px;
+						}
+						@include media-breakpoint-up(lg) {
+							left: $spacer / 2;
+							right: $spacer / 2;
+						}
+						@include media-breakpoint-up(xl) {
+							left: $spacer;
+							right: $spacer;
+						}
 						content: " ";
 						height: 3px;
 						background: rgb(55, 182, 171);
@@ -195,6 +219,42 @@ body {
 		background: none !important;
 		outline: none;
 		border: none;
+	}
+}
+
+#navbarMobile {
+	a {
+		font-family: $Inter;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 36px;
+		line-height: 26px;
+		color: $white;
+		&:hover {
+			color: $blunt-green;
+		}
+	}
+	li {
+		@extend.mb-1;
+		&.active {
+			a {
+				color: $blunt-green;
+			}
+		}
+	}
+}
+
+#navbarMobileDub {
+	a {
+		color: white;
+		&:hover {
+			color: $blunt-green;
+		}
+		font-family: $Inter;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 49px;
 	}
 }
 
@@ -297,6 +357,9 @@ body {
 
 .the-content {
 	@include media-breakpoint-up(md) {
+		padding-right: 46px;
+	}
+	@include media-breakpoint-up(lg) {
 		padding-right: 96px;
 	}
 	p {
@@ -372,6 +435,9 @@ body {
 		background-color: $black;
 		margin-bottom: 50px;
 		@include media-breakpoint-up(md) {
+			margin-bottom: 80px;
+		}
+		@include media-breakpoint-up(lg) {
 			margin-bottom: 180px;
 		}
 		z-index: 1;
@@ -382,6 +448,11 @@ body {
 			margin-bottom: -25px;
 			z-index: 2;
 			@include media-breakpoint-up(md) {
+				margin-top: 0px;
+				margin-left: 18%;
+				margin-bottom: -55px;
+			}
+			@include media-breakpoint-up(lg) {
 				margin-top: 0px;
 				margin-left: 28%;
 				margin-bottom: -125px;
@@ -412,12 +483,19 @@ body {
 			right: 0;
 			h1 {
 				color: white;
-				font-family: IBM Plex Sans;
+				font-family: $Plex;
 				font-style: normal;
 				font-weight: bold;
 				font-size: 35px;
 				line-height: 35px;
 				@include media-breakpoint-up(md) {
+					font-family: $Plex;
+					font-style: normal;
+					font-weight: bold;
+					font-size: 45px;
+					line-height: 45px;
+				}
+				@include media-breakpoint-up(xl) {
 					font-family: $Plex;
 					font-style: normal;
 					font-weight: bold;
@@ -703,13 +781,13 @@ body {
 
 .front-videos {
 	.primary-box {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			position: relative;
 		}
 	}
 	.image-div {
 		position: relative;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			width: 690px;
 			max-width: 100%;
 		}
@@ -726,7 +804,7 @@ body {
 		margin-top: -30px;
 		margin-left: 20px;
 		margin-right: 20px;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			margin-top: 0px;
 			margin-left: 0px;
 			margin-right: 0px;
@@ -749,7 +827,7 @@ body {
 			font-weight: bold;
 			font-size: 28px;
 			line-height: 32px;
-			@include media-breakpoint-up(md) {
+			@include media-breakpoint-up(lg) {
 				font-family: $Plex;
 				font-style: normal;
 				font-weight: bold;
@@ -1344,10 +1422,12 @@ body {
 		line-height: 120%;
 	}
 	.cat-nav {
+		flex-wrap: nowrap;
 		a {
 			&:first-of-type {
 				padding-left: 0;
 			}
+			white-space: nowrap;
 			padding-right: 30px;
 			color: $blunt-green;
 			font-family: $Inter;
@@ -1443,4 +1523,51 @@ body {
 	padding-bottom: 40px;
 	margin-bottom: 40px;
 	border-bottom: 1px solid $gray;
+}
+
+//search-form
+
+.search-form {
+	input {
+		&:focus {
+			color: $blunt-green;
+		}
+		background-color: transparent !important;
+		color: $blunt-green;
+		border: 0px solid transparent;
+		font-family: $Plex;
+
+		font-weight: normal;
+		font-size: 30px;
+		line-height: 105.4%;
+		font-style: normal;
+		@include media-breakpoint-up(md) {
+			font-weight: bold;
+			font-size: 65px;
+			line-height: 105.4%;
+		}
+		&::placeholder {
+			color: #454444;
+			opacity: 1;
+		}
+		&:-ms-input-placeholder {
+			color: #454444;
+		}
+
+		&::-ms-input-placeholder {
+			color: #454444;
+		}
+	}
+	button {
+		font-family: $Teko;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		// line-height: 120%;
+		padding: 22px auto;
+		&:hover {
+			background-color: white;
+			color: black;
+		}
+	}
 }

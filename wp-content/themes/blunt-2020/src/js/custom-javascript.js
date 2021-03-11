@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	// init our homepage slider
-	const homePageSlider = new Swiper(".swiper-container", {
+	const homePageSlider = new Swiper("#homepageCarousel", {
 		spaceBetween: 30,
 		effect: "fade",
 		loop: false,
@@ -45,5 +45,11 @@ jQuery(document).ready(function ($) {
 		console.log(index);
 		$(".step").removeClass("active");
 		$(".home-page-leader").find(`.step:eq(${index})`).addClass("active");
+	});
+
+	var swiper = new Swiper(".swiper-filter", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		freeMode: true,
 	});
 });
